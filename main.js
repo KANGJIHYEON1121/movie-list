@@ -64,7 +64,9 @@ let searchMovie = () => {
 
     // 검색 기능
     movies.forEach((data) => {
-      if (data.title.toLowerCase().includes(input.value.toLowerCase())) {
+      if (
+        data.original_title.toLowerCase().includes(input.value.toLowerCase())
+      ) {
         searchData.push(data);
       }
     });
@@ -115,8 +117,7 @@ callFunc().then(() => {
 let showCard = (data) => {
   data.forEach((row) => {
     let image = row['backdrop_path'];
-    let title = row['title'];
-    let originalTitle = row['original_title'];
+    let title = row['original_title'];
     let releaseDate = row['release_date'];
     let overview = row['overview'];
     let average = row['vote_average'];
