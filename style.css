@@ -108,3 +108,23 @@
   justify-items: center;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+.position {
+  display: flex;
+  flex-direction: column;
+}
+
+.up {
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  float: right;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px gray;
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

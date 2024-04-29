@@ -16,6 +16,7 @@ document.querySelector('.search-input').focus(); // 로딩 후 커서 포인터 
 let searchBtn = document.querySelector('.search-btn');
 let input = document.querySelector('.search-input');
 let cardCollection = document.getElementById('cardCollection');
+let up = document.querySelector('.up');
 
 // fetch 후 서버와 통신 성공 = 카드 데이터 movies에 push
 let callFunc = () => {
@@ -63,9 +64,7 @@ let searchMovie = () => {
 
     // 검색 기능
     movies.forEach((data) => {
-      if (
-        data.original_title.toLowerCase().includes(input.value.toLowerCase())
-      ) {
+      if (data.title.toLowerCase().includes(input.value.toLowerCase())) {
         searchData.push(data);
       }
     });
@@ -90,12 +89,11 @@ let removeCard = () => {
 };
 
 // 영화 클릭시 ID 알림 함수
-// let message = () => {
-//   let newCard = document.getElementById(movieId);
-//   newCard.addEventListener('click', () => {
-//     alert(`Movie ID: ${movieId}`);
-//   });
-// };
+let message = () => {
+  newCard.addEventListener('click', () => {
+    alert(`Movie ID: ${movieId}`);
+  });
+};
 
 // // 검색 기능
 // let search = (List) => {
@@ -117,7 +115,9 @@ callFunc().then(() => {
 let showCard = (data) => {
   data.forEach((row) => {
     let image = row['backdrop_path'];
-    let title = row['original_title'];
+    let title = row['title'];
+    let originalTitle = row['original_title'];
+    let releaseDate = row['release_date'];
     let overview = row['overview'];
     let average = row['vote_average'];
     let movieId = row['id'];
@@ -126,6 +126,7 @@ let showCard = (data) => {
       <div id="${movieId}" class="searchCards">
         <img src="https://image.tmdb.org/t/p/w500/${image}" alt="">
         <h3>${title}</h3>
+        <h4>${releaseDate}</h4>
         <p>${overview}</p>
         <h4>Rating: ${average}</h4>
       </div>`;
@@ -147,3 +148,7 @@ let enterKey = (e) => {
     searchMovie();
   }
 };
+
+up.addEventListener('click', function () {
+  window.scrollTo(0, 0);
+});
