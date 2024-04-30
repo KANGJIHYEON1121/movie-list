@@ -3,29 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/style/reset.css" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <title>내배캠 영화 평점 영화 콜렉션</title>
   </head>
   <body>
     <header class="title">
       <h1>내배캠 최고 평점 영화 콜렉션</h1>
     </header>
-    <form onsubmit="return false" class="search-form" action="">
+    <form class="search-form" action="">
       <label for="">영화 검색:</label>
-      <input
-        onkeypress="enterKey(event)"
-        class="search-input"
-        type="text"
-        placeholder="영화 제목을 검색해 보세요"
-      />
-      <button onclick="searchMovie()" class="search-btn" type="button">
-        검색
-      </button>
+      <input class="search-input" type="text" placeholder="영화 제목을 검색해 보세요" />
+      <button class="search-btn" type="submit">검색</button>
     </form>
-    <section>
-      <div id="cardCollection" class="card-list"></div>
-    </section>
-      <button class="up" type="button">⇧</button>
-    <script src="main.js" defer></script>
+    <ul id="card-list">
+      <li id="cardCollection" class=""></li>
+    </ul>
+    <button class="up" type="button">⇧</button>
+    <script src="./src/main.js" type="module" defer></script>
   </body>
 </html>

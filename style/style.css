@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle&family=Sunflower:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&family=Dongle&family=Sunflower:wght@300&display=swap");
 
 * {
   margin: 0px;
   padding: 0px;
-  font-family: 'Sunflower', sans-serif;
+  font-family: "Sunflower", sans-serif;
 }
 
 .title {
@@ -11,7 +11,7 @@
   width: 100%;
   height: 100px;
   text-align: center;
-  font-size: 15px;
+  font-size: 30px;
 
   display: flex;
   flex-direction: column;
@@ -78,6 +78,10 @@
   background-color: #e3e2b4;
 }
 
+.searchCards h3 {
+  font-weight: 700;
+}
+
 .cards {
   width: 400px;
   height: 500px;
@@ -99,7 +103,7 @@
   font-weight: bold;
 }
 
-.card-list {
+#cardCollection {
   width: 100%;
   margin: 10px auto 10px auto;
   padding: 15px 0px 30px 0px;
@@ -128,3 +132,4 @@
   bottom: 20px;
   right: 20px;
 }
+
